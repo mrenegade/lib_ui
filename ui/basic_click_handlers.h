@@ -48,6 +48,8 @@ public:
 		return url();
 	}
 
+	bool visited() const override;
+
 	TextEntity getTextEntity() const override;
 
 	static void Open(QString url, QVariant context = {});

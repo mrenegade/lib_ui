@@ -62,6 +62,7 @@ public:
 		const QString &url,
 		const QVariant &context);
 	[[nodiscard]] virtual bool copyPreOnClick(const QVariant &context);
+	[[nodiscard]] virtual bool isUrlVisited(const QString &url);
 	[[nodiscard]] virtual QString convertTagToMimeTag(const QString &tagId);
 	[[nodiscard]] virtual const Emoji::One *defaultEmojiVariant(
 		const Emoji::One *emoji);

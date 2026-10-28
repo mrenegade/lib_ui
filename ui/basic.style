@@ -8,6 +8,7 @@ using "ui/colors.palette";
 
 TextPalette {
 	linkFg: color;
+	linkVisitedFg: color;
 	monoFg: color;
 	markBg: color;
 	spoilerFg: color;
@@ -69,6 +70,7 @@ IconEmoji {
 
 defaultTextPalette: TextPalette {
 	linkFg: windowActiveTextFg;
+	linkVisitedFg: windowActiveTextFg;
 	monoFg: msgInMonoFg;
 	markBg: windowBgOver;
 	spoilerFg: msgInDateFg;

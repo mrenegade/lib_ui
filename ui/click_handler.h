@@ -61,6 +61,11 @@ public:
 		return QString();
 	}
 
+	// Whether the link target was already opened, to paint it differently.
+	[[nodiscard]] virtual bool visited() const {
+		return false;
+	}
+
 	// Entities in text support.
 	struct TextEntity {
 		EntityType type = EntityType();

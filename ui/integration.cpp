@@ -79,6 +79,10 @@ bool Integration::handleUrlClick(
 	return false;
 }
 
+bool Integration::isUrlVisited(const QString &url) {
+	return false;
+}
+
 bool Integration::copyPreOnClick(const QVariant &context) {
 	Toast::Show(u"Code copied to clipboard."_q);
 	return true;

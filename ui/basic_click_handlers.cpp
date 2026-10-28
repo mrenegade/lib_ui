@@ -48,6 +48,11 @@ UrlClickHandler::UrlClickHandler(const QString &url, bool fullDisplayed)
 	}
 }
 
+bool UrlClickHandler::visited() const {
+	return !isEmail()
+		&& Ui::Integration::Instance().isUrlVisited(_originalUrl);
+}
+
 QString UrlClickHandler::copyToClipboardContextItemText() const {
 	return isEmail()
 		? Ui::Integration::Instance().phraseContextCopyEmail()

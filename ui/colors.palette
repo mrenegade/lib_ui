@@ -265,6 +265,10 @@ historyLinkInFg: windowActiveTextFg; // inbox message link
 historyLinkInFgSelected: historyLinkInFg; // inbox message link in a selected text or message
 historyLinkOutFg: windowActiveTextFg; // outbox message link
 historyLinkOutFgSelected: historyLinkOutFg; // outbox message link in a selected text or message
+historyLinkVisitedInFg: #8e4ec6; // inbox message link that was already opened
+historyLinkVisitedInFgSelected: historyLinkVisitedInFg; // inbox message opened link in a selected text or message
+historyLinkVisitedOutFg: #8e4ec6; // outbox message link that was already opened
+historyLinkVisitedOutFgSelected: historyLinkVisitedOutFg; // outbox message opened link in a selected text or message
 historyFileNameInFg: historyTextInFg; // inbox media filename text
 historyFileNameInFgSelected: historyFileNameInFg; // inbox media filename text in a selected message
 historyFileNameOutFg: historyTextOutFg; // outbox media filename text

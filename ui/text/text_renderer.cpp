@@ -1848,11 +1848,23 @@ void Renderer::applyBlockProperties(
 		} else if (isMono) {
 			_currentPen = &_palette->monoFg->p;
 			_currentPenSelected = &_palette->selectMonoFg->p;
-		} else if (block->linkIndex()) {
+		} else if (const auto index = block->linkIndex()) {
+			const auto visited = [&] {
+				if (!_palette->linkVisitedFg
+					|| (_palette->linkVisitedFg == _palette->linkFg)
+					|| !_t->_extended) {
+					return false;
+				}
+				const auto &link = _t->_extended->links[index - 1];
+				return link && link->visited();
+			};
 			if (_quote && _quote->blockquote && _quoteBlockquoteCache) {
 				_quoteLinkPenOverride = QPen(_quoteBlockquoteCache->icon);
 				_currentPen = &_quoteLinkPenOverride;
 				_currentPenSelected = &_quoteLinkPenOverride;
+			} else if (visited()) {
+				_currentPen = &_palette->linkVisitedFg->p;
+				_currentPenSelected = &_palette->selectLinkFg->p;
 			} else {
 				_currentPen = &_palette->linkFg->p;
 				_currentPenSelected = &_palette->selectLinkFg->p;
